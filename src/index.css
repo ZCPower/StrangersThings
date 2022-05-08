@@ -1,0 +1,65 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Koulen&family=Teko&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Courgette&display=swap');
+
+h1 {
+    text-align: center;
+    font-family: 'Teko', sans-serif;
+    /* font-family: 'Courgette', cursive; */
+    font-size: 56px;
+
+    margin: 0;
+    /* color: #8add98 */
+    color: #cd0631;
+    text-shadow: 2px 0 0 #fff, -2px 0 0 #fff, 0 2px 0 #fff, 0 -2px 0 #fff, 1px 1px #fff, -1px -1px 0 #fff, 1px -1px 0 #fff, -1px 1px 0 #fff;
+}
+
+header {
+    position: absolute;
+    width: 100%;
+    top: 0;
+    left: 0;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    background: black;
+    color: white;
+}
+
+nav ul {
+    display: flex;
+    list-style-type: none;
+}
+
+nav ul li {
+    padding: .25em 1em;
+    font-family: 'Koulen', cursive;
+    color: #ffffff;
+    font-size: 24px;
+
+
+}
+
+body {
+    /* background: #a55 */
+    background: #fff
+}
+
+main {
+    margin-top: 5em;
+    display: flex;
+    align-items: center;
+
+}
+
+main button {
+    padding: 1em;
+    margin: 0;
+}
+
+main input {
+    width: 60vw;
+    margin: 2em 0em 2em 2em;
+    padding: .5em;
+    font-size: 20px;
+}
