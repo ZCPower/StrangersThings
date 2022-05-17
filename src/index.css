@@ -6,7 +6,7 @@ h1 {
     text-align: center;
     font-family: 'Teko', sans-serif;
     /* font-family: 'Courgette', cursive; */
-    font-size: 56px;
+    font-size: 3em;
 
     margin: 0;
     /* color: #8add98 */
@@ -31,35 +31,42 @@ nav ul {
     list-style-type: none;
 }
 
-nav ul li {
-    padding: .25em 1em;
+nav ul li a {
+    padding: 1em;
     font-family: 'Koulen', cursive;
     color: #ffffff;
-    font-size: 24px;
-
-
+    font-size: 1.3em;
+    text-decoration: none;
 }
+
+nav ul li a:hover {
+    color: #cd0631;
+    text-decoration: underline;
+    text-decoration-color: white;
+    text-decoration-thickness: 2px;
+    text-underline-offset: 3px;
+}
+
 
 body {
     /* background: #a55 */
     background: #fff
 }
 
-main {
-    margin-top: 5em;
+.body {
     display: flex;
-    align-items: center;
-
-}
-
-main button {
-    padding: 1em;
+    justify-content: center;
+    /* border: 2px solid red; */
+    width: 100%;
     margin: 0;
+    padding: 0;
 }
 
-main input {
-    width: 60vw;
-    margin: 2em 0em 2em 2em;
-    padding: .5em;
-    font-size: 20px;
+input {
+    border: 3px solid black;
+    background: #eee
+}
+
+p {
+    font-size: 1.3em;
 }

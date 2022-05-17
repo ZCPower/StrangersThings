@@ -1,0 +1,42 @@
+.newPost {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: auto;
+    width: 50%;
+    height: 98vh;
+}
+
+.createPost {
+    display: flex;
+    flex-direction: column;
+    padding: 1em;
+    box-shadow: 2px 2px 15px 2px #555;
+    width: 100%;
+    align-items: center;
+}
+
+.createPost label {
+    font-weight: bolder;
+}
+
+.createPost input,
+.createPost textarea {
+    padding: 1em;
+    margin: .5em;
+    padding: .5em;
+    font-size: 28px;
+    width: 80%;
+    background: #eee;
+    border: 3px solid black;
+}
+
+
+.createPost button {
+    padding: 1.0em;
+    font-size: 20px;
+    color: white;
+    background: #cd0631;
+    width: 84%;
+    margin-bottom: 1em;
+}

@@ -1,0 +1,25 @@
+main {
+    margin-top: 5em;
+    display: flex;
+    align-items: flex-start;
+
+}
+
+main button {
+    padding: .5em;
+    margin: 0;
+}
+
+main input {
+    width: 60vw;
+    margin: 1em;
+    padding: .5em;
+    font-size: 20px;
+}
+
+.postCard {
+    padding: 1em;
+    box-shadow: 2px 2px 2px 2px black;
+    background: #fee;
+    margin: .5em;
+}
