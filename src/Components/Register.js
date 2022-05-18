@@ -6,6 +6,8 @@ import './Registration.css'
 export default function Registration() {
     const [username, setUsername] = useState('')
     const [password, setPassword] = useState('')
+    const [confirmPassword, setConfirmPassword] = useState('')
+    const [token, setToken] = useState('')
 
     function handleUsernameChange(event) {
         // console.log(event.target.value)
@@ -16,17 +18,26 @@ export default function Registration() {
         // console.log(event.target.value)
         setPassword(event.target.value)
     }
+
+    function handleConfirmPasswordChange(event) {
+        // console.log(event.target.value)
+        setConfirmPassword(event.target.value)
+    }
     console.log('Username is ' + username)
     console.log('Password is ' + password)
+    console.log('Confirmation is ' + confirmPassword)
     return (
         <>
 
 
             <form className='registrationForm'
                 onSubmit={(e) => {
-                    e.preventDefault()
-                    register(username, password)
-                    console.log('Welcome ' + username)
+                    e.preventDefault();
+                    if (password === confirmPassword) {
+                        register(username, password, setToken())
+                    } else {
+                        alert('Those passwords dont match')
+                    }
                 }
                 }>
                 <h1 className='regh1'>Create an account!</h1>
@@ -42,6 +53,13 @@ export default function Registration() {
                     placeholder='Password'
                     minLength={8}
                     onChange={handlePasswordChange}
+                    required
+                ></input>
+                <input
+                    type='password'
+                    placeholder='Confirm Password'
+                    minLength={8}
+                    onChange={handleConfirmPasswordChange}
                     required
                 ></input>
 

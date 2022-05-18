@@ -1,23 +1,17 @@
 import React, { useState, useEffect } from 'react'
 import { fetchPosts } from '../api/api';
+import './Post.css'
 
-export default function Post() {
+export default function Post(props) {
     //add functionality that checks whether currentUser is the author of a post, and allow them to click a modify post button. 
-    const [posts, setPosts] = useState({})
 
-    useEffect(() => {
-        fetchPosts()
-            .then((posts) => setPosts(posts)
 
-            )
-
-            .catch(error => console.error(error))
-    }, [])
+    const posts = props.posts
 
     const cards = posts.map((post) => {
         return (
 
-            <div className='postCard'>
+            <div className='post'>
 
                 <h2>{post.title}</h2>
                 <h3>Author: {post.author.username}</h3>
@@ -31,7 +25,7 @@ export default function Post() {
     console.log(posts)
 
     return (
-        <div className='cardContainer'>
+        <div className='postContainer'>
             {cards}
         </div>
     )

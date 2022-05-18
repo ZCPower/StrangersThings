@@ -32,9 +32,7 @@ export default function CreatePost() {
                     name='location'
                     required
                 />
-                <label
-
-                >Willing to Deliver?</label>
+                <label >Willing to Deliver?</label>
                 <input
                     name='delivery'
                     type='checkbox' />
