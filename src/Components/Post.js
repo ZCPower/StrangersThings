@@ -5,7 +5,7 @@ import './Post.css'
 export default function Post(props) {
     //add functionality that checks whether currentUser is the author of a post, and allow them to click a modify post button. 
 
-    const { posts, token, username, loggedIn } = props
+    const { posts, token, username } = props
 
     const cards = posts.map((post) => {
         return (

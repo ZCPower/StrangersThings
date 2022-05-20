@@ -8,9 +8,10 @@ import CreatePost from './Components/CreatePost'
 import Post from './Components/Post'
 import Registration from './Components/Register';
 import Account from './Components/Account';
-import { BrowserRouter as Router, Route, Switch, useHistory } from 'react-router-dom'
+import { BrowserRouter as Router, Route, Switch, useHistory, Redirect } from 'react-router-dom'
 import { fetchPosts } from './api/api';
-
+import Messages from './Components/Messages';
+import MyPosts from './Components/MyPosts';
 
 
 
@@ -25,6 +26,8 @@ function App() {
 
   }, [])
 
+
+
   const [token, setToken] = useState('')
   const [username, setUsername] = useState('')
   const [password, setPassword] = useState('')
@@ -33,6 +36,10 @@ function App() {
 
   let history = useHistory();
 
+  // useEffect(() => {
+  //   if (!token) history.push('/login')
+  //   else history.push('/posts')
+  // }, [])
 
 
 
@@ -59,6 +66,12 @@ function App() {
             </Route>
             <Route path='/account'>
               <Account username={username} setToken={setToken} setLoggedIn={setLoggedIn} token={token} loggedIn={loggedIn} setUsername={setUsername} />
+            </Route>
+            <Route path='/messages'>
+              <Messages username={username} token={token} loggedIn={loggedIn} />
+            </Route>
+            <Route path='/myposts'>
+              <MyPosts username={username} token={token} loggedIn={loggedIn} />
             </Route>
           </Switch>
         </div>
