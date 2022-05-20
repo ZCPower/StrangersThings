@@ -5,7 +5,9 @@ import './CreatePost.css'
 // and more!   
 
 
-export default function CreatePost() {
+export default function CreatePost(props) {
+
+    const { username, setUsername, password, setPassword, confirmPassword, setConfirmPassword, token, setToken } = props
 
 
     return (

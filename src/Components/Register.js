@@ -2,12 +2,10 @@ import React, { useState, useEffect } from 'react'
 import { Link } from 'react-router-dom'
 import { register } from '../api/api'
 import './Registration.css'
+import Post from './Post'
 
-export default function Registration() {
-    const [username, setUsername] = useState('')
-    const [password, setPassword] = useState('')
-    const [confirmPassword, setConfirmPassword] = useState('')
-    const [token, setToken] = useState('')
+export default function Registration(props) {
+    const { username, setUsername, password, setPassword, confirmPassword, setConfirmPassword, token, setToken, loggedIn, setLoggedIn, history } = props
 
     function handleUsernameChange(event) {
         // console.log(event.target.value)
@@ -23,9 +21,11 @@ export default function Registration() {
         // console.log(event.target.value)
         setConfirmPassword(event.target.value)
     }
-    console.log('Username is ' + username)
-    console.log('Password is ' + password)
-    console.log('Confirmation is ' + confirmPassword)
+    // console.log('Username is ' + username)
+    // console.log('Password is ' + password)
+    // console.log('Confirmation is ' + confirmPassword)
+    // console.log('token check' + token)
+
     return (
         <>
 
@@ -34,7 +34,8 @@ export default function Registration() {
                 onSubmit={(e) => {
                     e.preventDefault();
                     if (password === confirmPassword) {
-                        register(username, password, setToken())
+                        register(username, password, token, setToken)
+                        setLoggedIn(true)
                     } else {
                         alert('Those passwords dont match')
                     }

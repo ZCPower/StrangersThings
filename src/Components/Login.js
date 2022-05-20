@@ -3,9 +3,8 @@ import { login } from '../api/api';
 import './Login.css'
 import { Link } from 'react-router-dom'
 
-export default function LoginScreen() {
-    const [username, setUsername] = useState('')
-    const [password, setPassword] = useState('')
+export default function LoginScreen(props) {
+    const { username, setUsername, password, setPassword, token, setToken, loggedIn, setLoggedIn, history } = props
 
     function handleUsernameChange(event) {
         // console.log(event.target.value)
@@ -17,6 +16,9 @@ export default function LoginScreen() {
         setPassword(event.target.value)
     }
 
+    function goToPosts() {
+        history.push('/posts')
+    }
     //set form data, send requeset to API.
 
 
@@ -29,7 +31,11 @@ export default function LoginScreen() {
             <form className='loginForm'
                 onSubmit={(e) => {
                     e.preventDefault()
-                    login(username, password)
+                    login(username, password, token, setToken)
+                    goToPosts()
+                    // history.push('/posts')
+                    // history.forward()
+
                     // console.log('Welcome ' + username)
                 }
                 }>

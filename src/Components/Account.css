@@ -1,0 +1,27 @@
+.accountContainer {
+    display: flex;
+    flex-direction: column;
+    margin-top: 30vh;
+    border: 3px solid black;
+    text-align: center;
+    background: #eee
+}
+
+.accountContainer h3 {
+    padding: 1em;
+}
+
+.accountHeading {
+    font-size: 32px;
+    width: 1000px;
+    bACKGROUND: BLACK;
+    padding: 1em;
+
+    color: white;
+    text-shadow: 2px 2px 12px 12px #cd0631;
+    margin-top: 0;
+}
+
+.accountLink {
+    font-size: 28px;
+}

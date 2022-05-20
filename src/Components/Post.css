@@ -1,14 +1,76 @@
 .post {
-    padding: 1em;
-    box-shadow: 2px 2px 2px 2px black;
+    padding: 0 0 1em 0;
+    border: black 5px solid;
+
     background: #eee;
-    margin: .5em;
+    margin-bottom: 1.5em;
+    text-align: center;
+    font-weight: bold;
+}
+
+.post button {
+    padding: .5em;
+    font-size: 20px;
+    margin: .25em;
 }
 
 .postContainer {
-    margin-top: 5em;
+    margin-top: 8vh;
     display: flex;
-    flex-direction: row;
-    flex-wrap: nowrap;
+    flex-direction: column;
+    align-items: center;
+    width: 1000px;
+}
+
+
+
+.edit {
+    background: #638;
+    color: white;
 
 }
+
+.edit:hover {
+    background: #306;
+    background: black;
+}
+
+.delete {
+    background: #cd0631;
+
+    color: white;
+}
+
+.delete:hover {
+    background: black;
+    color: white;
+    /* box-shadow: 2px 2px 2px black; */
+}
+
+h2 {
+    font-size: 32px;
+    width: 1000px;
+    bACKGROUND: BLACK;
+    padding: 1em;
+    color: white;
+    text-shadow: 2px 2px 12px 12px #cd0631;
+    margin-top: 0;
+}
+
+h3 {
+    font-size: 26px;
+}
+
+/*
+.price {
+    font-size: 24px;
+
+}
+
+.location {
+    font-size: 22px;
+}
+
+.description {
+    font-size: 24px;
+} */
