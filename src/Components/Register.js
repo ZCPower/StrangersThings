@@ -5,7 +5,7 @@ import './Registration.css'
 import Post from './Post'
 
 export default function Registration(props) {
-    const { username, setUsername, password, setPassword, confirmPassword, setConfirmPassword, token, setToken, loggedIn, setLoggedIn, history } = props
+    const { username, setUsername, password, setPassword, confirmPassword, setConfirmPassword, token, setToken, setLoggedIn } = props
 
     function handleUsernameChange(event) {
         // console.log(event.target.value)
@@ -35,6 +35,7 @@ export default function Registration(props) {
                     e.preventDefault();
                     if (password === confirmPassword) {
                         register(username, password, token, setToken)
+                        localStorage.setItem("token", token)
                         setLoggedIn(true)
                     } else {
                         alert('Those passwords dont match')

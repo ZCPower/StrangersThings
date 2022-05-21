@@ -16,9 +16,9 @@ export default function Post(props) {
                 <p className='price'>Price : {post.price}</p>
                 <p className='location'>Location: {post.location}</p>
                 <p className='description'>{post.description}</p>
-                {token ? <div>
-                    <button className='edit'>Edit</button>
-                    <button className='delete'>Delete</button>
+                {token ? <div className='buttonContainer'>
+                    {username === post.author.username ? <button className='edit'>Edit</button> : <button className='messageButton'>Message</button>}
+                    {username === post.author.username ? <button className='delete'>Delete</button> : null}
                 </div> : null}
             </div>
         )

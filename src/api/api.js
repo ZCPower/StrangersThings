@@ -1,5 +1,18 @@
 export const baseURL = 'https://strangers-things.herokuapp.com/api/2202-ftb-et-web-pt';
 
+// export function makeHeaders(token) {
+//     if (token) return {
+//         'Content-Type': 'application/json',
+//         'Authorization': 'Bearer ' + token
+//     }
+//     if (!token) {
+//         return {
+//             'Content-Type': 'application/json'
+//         }
+//     }
+// }
+
+
 export async function fetchPosts(setPosts) {
     fetch(`${baseURL}/posts`)
         .then(response => response.json())
@@ -29,7 +42,7 @@ export async function register(username, password, token, setToken) {
             // console.log(result);
             // console.log(newToken)
             console.log(token)
-
+            window.localStorage.setItem("token", newToken)
         })
         .catch(console.error);
 }
@@ -50,10 +63,10 @@ export async function login(username, password, token, setToken) {
         .then(result => {
             console.log(result);
             const newToken = result.data.token
-            // console.log(token)
             if (result.success) {
                 setToken(newToken)
-
+                console.log(token)
+                window.localStorage.setItem("token", newToken)
             }
         })
         .catch(console.error);
@@ -71,3 +84,51 @@ export async function currentUser(token) {
         })
         .catch(console.error);
 }
+
+
+export async function createPost(title, description, price, location, delivery, token) {
+    fetch(`${baseURL}/posts`, {
+        method: "POST",
+        headers: {
+            "content-Type": "application/json",
+            "authorization": "Bearer " + token
+        },
+        body: JSON.stringify({
+            post: {
+                title: title,
+                description: description,
+                price: price,
+                willingToDeliver: delivery
+            }
+        })
+    })
+        .then(response => response.json())
+        .then(result => console.log(result))
+
+
+}
+
+// export async function createPost(title, description, price, location, delivery, token) {
+//     console.log(token)
+//     fetch(`${baseURL}/posts`, {
+//         method: "POST",
+//         headers: {
+//             'Content-Type': 'application/json',
+//             'Authorization': `Bearer ${token}`
+//         },
+//         body: JSON.stringify({
+//             post: {
+//                 title: title,
+//                 description: description,
+//                 price: price,
+//                 location: location,
+//                 willDeliver: delivery
+//             }
+//         })
+//     }).then(response => response.json())
+//         .then(result => {
+//             console.log(result);
+//         })
+//         .catch(console.error);
+// }
+

@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { login } from '../api/api';
 import './Login.css'
-import { Link, Redirect } from 'react-router-dom'
+import { Link } from 'react-router-dom'
 
 export default function LoginScreen(props) {
     const { username, setUsername, password, setPassword, token, setToken, loggedIn, setLoggedIn, history } = props
@@ -16,21 +16,15 @@ export default function LoginScreen(props) {
         setPassword(event.target.value)
     }
 
-
-    //figure out how to communicate with the API to send/retrieve Bearer token.
-    //learn how to authenticate users. Current method probably leaves username and password open to view in console.
-
     return (
         <>
             <form className='loginForm'
                 onSubmit={(e) => {
                     e.preventDefault();
                     login(username, password, token, setToken);
-                    < Redirect to='/posts' />
-                    history.push('/posts')
-                    // history.forward()
-
-                    // console.log('Welcome ' + username)
+                    setLoggedIn(true)
+                    console.log(token)
+                    window.localStorage.setItem("token", 5)
                 }
                 }>
                 <h1 className='regh1'>Login to view postings!</h1>

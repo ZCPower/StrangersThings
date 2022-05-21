@@ -49,14 +49,14 @@ nav ul li a:hover {
 
 
 body {
-    /* background: #a55 */
+    width: 100%;
     background: #fff
 }
 
 .body {
     display: flex;
     justify-content: center;
-    /* border: 2px solid red; */
+    border: 2px solid red;
     width: 100%;
     margin: 0;
     padding: 0;

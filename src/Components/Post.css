@@ -30,10 +30,10 @@
 
 }
 
-.edit:hover {
+/* .edit:hover {
     background: #306;
     background: black;
-}
+} */
 
 .delete {
     background: #cd0631;
@@ -41,12 +41,11 @@
     color: white;
 }
 
-.delete:hover {
+/* .delete:hover {
     background: black;
     color: white;
     /* box-shadow: 2px 2px 2px black; */
-}
-
+/* } */
 h2 {
     font-size: 32px;
     width: 1000px;
@@ -59,6 +58,17 @@ h2 {
 
 h3 {
     font-size: 26px;
+}
+
+.messageButton {
+    background: #359;
+    color: white;
+
+}
+
+.buttonContainer button:hover {
+    background: black;
+    color: white;
 }
 
 /*
