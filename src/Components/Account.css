@@ -1,7 +1,8 @@
 .accountContainer {
     display: flex;
     flex-direction: column;
-    margin-top: 30vh;
+    margin-top: 20vh;
+    /* margin-bottom: 18vh; */
     border: 3px solid black;
     text-align: center;
     background: #eee

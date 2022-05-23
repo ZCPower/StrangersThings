@@ -1,9 +1,9 @@
 import React from 'react'
 import './Account.css'
-import { Link, Redirect } from 'react-router-dom'
+import { Link } from 'react-router-dom'
 
 export default function Account(props) {
-    const { username, setLoggedIn, setToken, loggedIn, token, setUsername } = props
+    const { username, setToken, token, setUsername } = props
     return (
         <>
             <div className='accountContainer'>
@@ -13,7 +13,6 @@ export default function Account(props) {
                 {token ? <h4 className='accountLink'><Link to='/messages'>View Your Messages</Link></h4> : null}
                 < Link to='/login' onClick={() => {
                     setToken('');
-                    setLoggedIn(false)
                     setUsername('')
 
 
@@ -23,13 +22,3 @@ export default function Account(props) {
         </>
     )
 }
-
-// {
-//     <Link onClick={() => {
-//         setToken('');
-//         setLoggedIn(false)
-//         setUsername('')
-//         console.log(loggedIn)
-//         console.log(token)
-//     }}><h4 className='accountLink'>Log Out</h4></Link>
-// }

@@ -1,5 +1,5 @@
 .loginForm {
-    height: 98vh;
+    height: 90vh;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -21,4 +21,24 @@
     width: 88%;
     background: #cd0631;
     color: white;
+}
+
+@media (max-height: 616px) {
+    .loginForm {
+        /* background: blue; */
+        height: 88vh;
+        margin-top: 4em;
+    }
+
+
+    .loginForm input {
+        padding: .75em;
+        font-size: 24px;
+    }
+
+    .loginForm button {
+        padding: .75em;
+        font-size: 24px;
+        margin: .5em;
+    }
 }

@@ -1,10 +1,7 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState } from 'react'
 import { createPost } from '../api/api'
 import './CreatePost.css'
-
-//Allow user to leave a description, title, price, willing to deliver, location, 
-// and more!   
-
+import { useHistory } from 'react-router-dom'
 
 export default function CreatePost(props) {
 
@@ -15,23 +12,19 @@ export default function CreatePost(props) {
     const [location, setLocation] = useState('')
     const [delivery, setDelivery] = useState(false)
 
+    const history = useHistory();
+
     function handleSubmit(event) {
         event.preventDefault();
-        createPost(title, description, price, location, delivery, token)
-        console.log('Im creating a new post and my token is: ' + token)
-        console.log('The title is: ' + title)
-        console.log('The description is: ' + description)
-        console.log('The price is: ' + price)
-        console.log('The location is: ' + location)
-        console.log('Willing to deliver? ' + delivery)
-        console.log('THe token is ' + token)
+        createPost(title, description, price, location, delivery, token);
+        history.push('/posts')
     }
 
     return (
         <div className='newPost'>
             <form className='createPost'
                 onSubmit={handleSubmit}>
-                <h1 className='regh1'>Add new listing, {username}!</h1>
+                <h1 className='regh1'>Add a new listing, {username}!</h1>
                 <label>Title</label>
                 <input
                     name='title'
@@ -40,7 +33,7 @@ export default function CreatePost(props) {
                     onChange={event => (setTitle(event.target.value))}
                 />
                 <label >Description</label>
-                <textarea
+                <input
                     name='description'
                     required
                     value={description}

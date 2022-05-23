@@ -17,7 +17,7 @@ export async function fetchPosts(setPosts) {
     fetch(`${baseURL}/posts`)
         .then(response => response.json())
         .then(result => {
-            console.log(result);
+            // console.log(result);
             setPosts(result.data.posts)
         })
         .catch(console.error);
@@ -98,6 +98,7 @@ export async function createPost(title, description, price, location, delivery, 
                 title: title,
                 description: description,
                 price: price,
+                location: location,
                 willingToDeliver: delivery
             }
         })
@@ -108,27 +109,33 @@ export async function createPost(title, description, price, location, delivery, 
 
 }
 
-// export async function createPost(title, description, price, location, delivery, token) {
-//     console.log(token)
-//     fetch(`${baseURL}/posts`, {
-//         method: "POST",
-//         headers: {
-//             'Content-Type': 'application/json',
-//             'Authorization': `Bearer ${token}`
-//         },
-//         body: JSON.stringify({
-//             post: {
-//                 title: title,
-//                 description: description,
-//                 price: price,
-//                 location: location,
-//                 willDeliver: delivery
-//             }
-//         })
-//     }).then(response => response.json())
-//         .then(result => {
-//             console.log(result);
-//         })
-//         .catch(console.error);
-// }
 
+export async function removePost(id, token) {
+    fetch(`${baseURL}/posts/${id}`, {
+        method: "DELETE",
+        headers: {
+            'Content-Type': 'application/json',
+            'Authorization': `Bearer ${token}`
+        }
+    }).then(response => response.json())
+        .then(result => {
+            console.log(result);
+        })
+        .catch(console.error);
+}
+
+export async function personalData(setMessages, token) {
+    console.log(token)
+    console.log(setMessages)
+    fetch(baseURL + '/users/me', {
+        headers: {
+            'Content-Type': 'application/json',
+            'Authorization': `Bearer ${token}`
+        },
+    }).then(response => response.json())
+        .then(result => {
+            console.log(result);
+            setMessages(result)
+        })
+        .catch(console.error);
+}

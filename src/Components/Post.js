@@ -1,11 +1,16 @@
-import React, { useState, useEffect } from 'react'
-import { fetchPosts } from '../api/api';
+import React from 'react'
+import { removePost } from '../api/api';
 import './Post.css'
 
 export default function Post(props) {
     //add functionality that checks whether currentUser is the author of a post, and allow them to click a modify post button. 
 
     const { posts, token, username } = props
+
+    async function deletePost(id, token) {
+        removePost(id, token)
+        console.log('Deleted post with id: ' + id)
+    }
 
     const cards = posts.map((post) => {
         return (
@@ -18,7 +23,7 @@ export default function Post(props) {
                 <p className='description'>{post.description}</p>
                 {token ? <div className='buttonContainer'>
                     {username === post.author.username ? <button className='edit'>Edit</button> : <button className='messageButton'>Message</button>}
-                    {username === post.author.username ? <button className='delete'>Delete</button> : null}
+                    {username === post.author.username ? <button onClick={() => deletePost(post._id, token)} className='delete'>Delete</button> : null}
                 </div> : null}
             </div>
         )

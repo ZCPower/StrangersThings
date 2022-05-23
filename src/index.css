@@ -2,14 +2,12 @@
 @import url('https://fonts.googleapis.com/css2?family=Koulen&family=Teko&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Courgette&display=swap');
 
+
 h1 {
     text-align: center;
     font-family: 'Teko', sans-serif;
-    /* font-family: 'Courgette', cursive; */
     font-size: 3em;
-
     margin: 0;
-    /* color: #8add98 */
     color: #cd0631;
     text-shadow: 2px 0 0 #fff, -2px 0 0 #fff, 0 2px 0 #fff, 0 -2px 0 #fff, 1px 1px #fff, -1px -1px 0 #fff, 1px -1px 0 #fff, -1px 1px 0 #fff;
 }
@@ -18,6 +16,7 @@ header {
     position: absolute;
     width: 100%;
     top: 0;
+    margin: 0;
     left: 0;
     display: flex;
     justify-content: space-around;
@@ -49,15 +48,14 @@ nav ul li a:hover {
 
 
 body {
-    width: 100%;
-    background: #fff
+    background: #fff;
+    overflow-x: hidden;
+    margin-bottom: 0;
 }
 
 .body {
     display: flex;
     justify-content: center;
-    border: 2px solid red;
-    width: 100%;
     margin: 0;
     padding: 0;
 }

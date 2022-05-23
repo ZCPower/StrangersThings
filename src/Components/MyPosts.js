@@ -6,7 +6,6 @@ const MyPosts = () => {
         <div className='messageContainer'>
 
             <h1>Hey</h1>
-            <h1>Hey</h1> <h1>Hey</h1> <h1>Hey</h1> <h1>Hey</h1>
 
 
         </div>

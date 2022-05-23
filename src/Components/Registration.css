@@ -34,3 +34,25 @@
 .regh1 {
     font-size: 4em;
 }
+
+@media (max-height: 616px) {
+    .registrationForm {
+        /* background: blue; */
+        height: 88vh;
+        margin-top: 4em;
+    }
+
+
+    .registrationForm input {
+        padding: .5em;
+        font-size: 24px;
+        margin: .75em;
+    }
+
+    .registrationForm button {
+        padding: .6em;
+        font-size: 22px;
+        margin: .25em;
+        width: 85%;
+    }
+}

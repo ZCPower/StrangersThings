@@ -1,23 +1,23 @@
 import React from 'react'
 import './Messages.css'
 
-const Messages = () => {
-    let messages = [{ author: 'Peter', content: 'Hey How are you?' }, { author: 'Sandra', content: 'Hey Miss me yet?' }]
-    //obvs this would come from the API
+
+const Messages = (props) => {
+    // const { messages } = props
 
 
-    const myMessages = messages.map((message) => {
-        return (
-            <>
-                <h3>{message.author}</h3>
-                <h4>{message.content}</h4>
-            </>)
-    })
 
-    console.log(myMessages)
+
+    // const myMessages = messages.map((message) => {
+    //     return (
+    //         {}
+    //     )
+    // })
+
 
     return (<section>
-        {myMessages}
+        <h3>Message: If you're reading this, you're here before this part of the project is done. </h3>
+        <h3>Author: Zach </h3>
     </section>
     )
 }
